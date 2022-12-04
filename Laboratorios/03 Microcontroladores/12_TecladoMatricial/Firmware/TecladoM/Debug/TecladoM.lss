@@ -1,0 +1,861 @@
+
+TecladoM.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000053e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004ea  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000053e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000570  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000050  00000000  00000000  000005b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000088b  00000000  00000000  00000600  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006cb  00000000  00000000  00000e8b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000809  00000000  00000000  00001556  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000068  00000000  00000000  00001d60  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000003e0  00000000  00000000  00001dc8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000198  00000000  00000000  000021a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000030  00000000  00000000  00002340  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 44 00 	jmp	0x88	; 0x88 <__ctors_end>
+   4:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+   8:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+   c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  10:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  14:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  18:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  1c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  20:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  24:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  28:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  2c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  30:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  34:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  38:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  3c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  40:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  44:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  48:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  4c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  50:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  54:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  58:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  5c:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  60:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  64:	0c 94 4e 00 	jmp	0x9c	; 0x9c <__bad_interrupt>
+  68:	5a 00       	.word	0x005a	; ????
+  6a:	70 00       	.word	0x0070	; ????
+  6c:	86 00       	.word	0x0086	; ????
+  6e:	9c 00       	.word	0x009c	; ????
+  70:	b2 00       	.word	0x00b2	; ????
+  72:	c8 00       	.word	0x00c8	; ????
+  74:	de 00       	.word	0x00de	; ????
+  76:	f4 00       	.word	0x00f4	; ????
+  78:	0a 01       	movw	r0, r20
+  7a:	20 01       	movw	r4, r0
+  7c:	36 01       	movw	r6, r12
+  7e:	4c 01       	movw	r8, r24
+  80:	62 01       	movw	r12, r4
+  82:	78 01       	movw	r14, r16
+  84:	8e 01       	movw	r16, r28
+  86:	a4 01       	movw	r20, r8
+
+00000088 <__ctors_end>:
+  88:	11 24       	eor	r1, r1
+  8a:	1f be       	out	0x3f, r1	; 63
+  8c:	cf ef       	ldi	r28, 0xFF	; 255
+  8e:	d8 e0       	ldi	r29, 0x08	; 8
+  90:	de bf       	out	0x3e, r29	; 62
+  92:	cd bf       	out	0x3d, r28	; 61
+  94:	0e 94 ca 01 	call	0x394	; 0x394 <main>
+  98:	0c 94 73 02 	jmp	0x4e6	; 0x4e6 <_exit>
+
+0000009c <__bad_interrupt>:
+  9c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a0 <show_number>:
+| Description:                                  |
++-----------------------------------------------+
+*/
+void show_number(uint8_t x)
+{
+	switch (x)
+  a0:	90 e0       	ldi	r25, 0x00	; 0
+  a2:	80 31       	cpi	r24, 0x10	; 16
+  a4:	91 05       	cpc	r25, r1
+  a6:	08 f0       	brcs	.+2      	; 0xaa <show_number+0xa>
+  a8:	64 c1       	rjmp	.+712    	; 0x372 <show_number+0x2d2>
+  aa:	fc 01       	movw	r30, r24
+  ac:	ec 5c       	subi	r30, 0xCC	; 204
+  ae:	ff 4f       	sbci	r31, 0xFF	; 255
+  b0:	0c 94 6d 02 	jmp	0x4da	; 0x4da <__tablejump2__>
+	{
+		//Muestra numero 0
+		case 0:
+			SEGA_ON;
+  b4:	85 b1       	in	r24, 0x05	; 5
+  b6:	8f 7b       	andi	r24, 0xBF	; 191
+  b8:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+  ba:	85 b1       	in	r24, 0x05	; 5
+  bc:	8f 7d       	andi	r24, 0xDF	; 223
+  be:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+  c0:	85 b1       	in	r24, 0x05	; 5
+  c2:	8f 7e       	andi	r24, 0xEF	; 239
+  c4:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+  c6:	85 b1       	in	r24, 0x05	; 5
+  c8:	87 7f       	andi	r24, 0xF7	; 247
+  ca:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+  cc:	85 b1       	in	r24, 0x05	; 5
+  ce:	8b 7f       	andi	r24, 0xFB	; 251
+  d0:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+  d2:	85 b1       	in	r24, 0x05	; 5
+  d4:	8d 7f       	andi	r24, 0xFD	; 253
+  d6:	85 b9       	out	0x05, r24	; 5
+			SEGG_OFF;
+  d8:	85 b1       	in	r24, 0x05	; 5
+  da:	81 60       	ori	r24, 0x01	; 1
+  dc:	85 b9       	out	0x05, r24	; 5
+		break;
+  de:	08 95       	ret
+		//Muestra numero 1
+		case 1:
+			SEGA_OFF;
+  e0:	85 b1       	in	r24, 0x05	; 5
+  e2:	80 64       	ori	r24, 0x40	; 64
+  e4:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+  e6:	85 b1       	in	r24, 0x05	; 5
+  e8:	8f 7d       	andi	r24, 0xDF	; 223
+  ea:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+  ec:	85 b1       	in	r24, 0x05	; 5
+  ee:	8f 7e       	andi	r24, 0xEF	; 239
+  f0:	85 b9       	out	0x05, r24	; 5
+			SEGD_OFF;
+  f2:	85 b1       	in	r24, 0x05	; 5
+  f4:	88 60       	ori	r24, 0x08	; 8
+  f6:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+  f8:	85 b1       	in	r24, 0x05	; 5
+  fa:	84 60       	ori	r24, 0x04	; 4
+  fc:	85 b9       	out	0x05, r24	; 5
+			SEGF_OFF;
+  fe:	85 b1       	in	r24, 0x05	; 5
+ 100:	82 60       	ori	r24, 0x02	; 2
+ 102:	85 b9       	out	0x05, r24	; 5
+			SEGG_OFF;
+ 104:	85 b1       	in	r24, 0x05	; 5
+ 106:	81 60       	ori	r24, 0x01	; 1
+ 108:	85 b9       	out	0x05, r24	; 5
+		break;
+ 10a:	08 95       	ret
+		//Muestra numero 2
+		case 2:
+			SEGA_ON;
+ 10c:	85 b1       	in	r24, 0x05	; 5
+ 10e:	8f 7b       	andi	r24, 0xBF	; 191
+ 110:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 112:	85 b1       	in	r24, 0x05	; 5
+ 114:	8f 7d       	andi	r24, 0xDF	; 223
+ 116:	85 b9       	out	0x05, r24	; 5
+			SEGC_OFF;
+ 118:	85 b1       	in	r24, 0x05	; 5
+ 11a:	80 61       	ori	r24, 0x10	; 16
+ 11c:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 11e:	85 b1       	in	r24, 0x05	; 5
+ 120:	87 7f       	andi	r24, 0xF7	; 247
+ 122:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 124:	85 b1       	in	r24, 0x05	; 5
+ 126:	8b 7f       	andi	r24, 0xFB	; 251
+ 128:	85 b9       	out	0x05, r24	; 5
+			SEGF_OFF;
+ 12a:	85 b1       	in	r24, 0x05	; 5
+ 12c:	82 60       	ori	r24, 0x02	; 2
+ 12e:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 130:	85 b1       	in	r24, 0x05	; 5
+ 132:	8e 7f       	andi	r24, 0xFE	; 254
+ 134:	85 b9       	out	0x05, r24	; 5
+		break;
+ 136:	08 95       	ret
+		//Muestra numero 3
+		case 3:
+			SEGA_ON;
+ 138:	85 b1       	in	r24, 0x05	; 5
+ 13a:	8f 7b       	andi	r24, 0xBF	; 191
+ 13c:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 13e:	85 b1       	in	r24, 0x05	; 5
+ 140:	8f 7d       	andi	r24, 0xDF	; 223
+ 142:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 144:	85 b1       	in	r24, 0x05	; 5
+ 146:	8f 7e       	andi	r24, 0xEF	; 239
+ 148:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 14a:	85 b1       	in	r24, 0x05	; 5
+ 14c:	87 7f       	andi	r24, 0xF7	; 247
+ 14e:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+ 150:	85 b1       	in	r24, 0x05	; 5
+ 152:	84 60       	ori	r24, 0x04	; 4
+ 154:	85 b9       	out	0x05, r24	; 5
+			SEGF_OFF;
+ 156:	85 b1       	in	r24, 0x05	; 5
+ 158:	82 60       	ori	r24, 0x02	; 2
+ 15a:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 15c:	85 b1       	in	r24, 0x05	; 5
+ 15e:	8e 7f       	andi	r24, 0xFE	; 254
+ 160:	85 b9       	out	0x05, r24	; 5
+		break;
+ 162:	08 95       	ret
+		//Muestra numero 4
+		case 4:
+			SEGA_OFF;
+ 164:	85 b1       	in	r24, 0x05	; 5
+ 166:	80 64       	ori	r24, 0x40	; 64
+ 168:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 16a:	85 b1       	in	r24, 0x05	; 5
+ 16c:	8f 7d       	andi	r24, 0xDF	; 223
+ 16e:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 170:	85 b1       	in	r24, 0x05	; 5
+ 172:	8f 7e       	andi	r24, 0xEF	; 239
+ 174:	85 b9       	out	0x05, r24	; 5
+			SEGD_OFF;
+ 176:	85 b1       	in	r24, 0x05	; 5
+ 178:	88 60       	ori	r24, 0x08	; 8
+ 17a:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+ 17c:	85 b1       	in	r24, 0x05	; 5
+ 17e:	84 60       	ori	r24, 0x04	; 4
+ 180:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 182:	85 b1       	in	r24, 0x05	; 5
+ 184:	8d 7f       	andi	r24, 0xFD	; 253
+ 186:	85 b9       	out	0x05, r24	; 5
+		SEGG_ON;
+ 188:	85 b1       	in	r24, 0x05	; 5
+ 18a:	8e 7f       	andi	r24, 0xFE	; 254
+ 18c:	85 b9       	out	0x05, r24	; 5
+		break;
+ 18e:	08 95       	ret
+		//Muestra numero 5
+		case 5:
+			SEGA_ON;
+ 190:	85 b1       	in	r24, 0x05	; 5
+ 192:	8f 7b       	andi	r24, 0xBF	; 191
+ 194:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 196:	85 b1       	in	r24, 0x05	; 5
+ 198:	80 62       	ori	r24, 0x20	; 32
+ 19a:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 19c:	85 b1       	in	r24, 0x05	; 5
+ 19e:	8f 7e       	andi	r24, 0xEF	; 239
+ 1a0:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 1a2:	85 b1       	in	r24, 0x05	; 5
+ 1a4:	87 7f       	andi	r24, 0xF7	; 247
+ 1a6:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+ 1a8:	85 b1       	in	r24, 0x05	; 5
+ 1aa:	84 60       	ori	r24, 0x04	; 4
+ 1ac:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 1ae:	85 b1       	in	r24, 0x05	; 5
+ 1b0:	8d 7f       	andi	r24, 0xFD	; 253
+ 1b2:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 1b4:	85 b1       	in	r24, 0x05	; 5
+ 1b6:	8e 7f       	andi	r24, 0xFE	; 254
+ 1b8:	85 b9       	out	0x05, r24	; 5
+		break;
+ 1ba:	08 95       	ret
+		//Muestra numero 6
+		case 6:
+			SEGA_ON;
+ 1bc:	85 b1       	in	r24, 0x05	; 5
+ 1be:	8f 7b       	andi	r24, 0xBF	; 191
+ 1c0:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 1c2:	85 b1       	in	r24, 0x05	; 5
+ 1c4:	80 62       	ori	r24, 0x20	; 32
+ 1c6:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 1c8:	85 b1       	in	r24, 0x05	; 5
+ 1ca:	8f 7e       	andi	r24, 0xEF	; 239
+ 1cc:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 1ce:	85 b1       	in	r24, 0x05	; 5
+ 1d0:	87 7f       	andi	r24, 0xF7	; 247
+ 1d2:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 1d4:	85 b1       	in	r24, 0x05	; 5
+ 1d6:	8b 7f       	andi	r24, 0xFB	; 251
+ 1d8:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 1da:	85 b1       	in	r24, 0x05	; 5
+ 1dc:	8d 7f       	andi	r24, 0xFD	; 253
+ 1de:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 1e0:	85 b1       	in	r24, 0x05	; 5
+ 1e2:	8e 7f       	andi	r24, 0xFE	; 254
+ 1e4:	85 b9       	out	0x05, r24	; 5
+		break;
+ 1e6:	08 95       	ret
+		//Muestra numero 7
+		case 7:
+			SEGA_ON;
+ 1e8:	85 b1       	in	r24, 0x05	; 5
+ 1ea:	8f 7b       	andi	r24, 0xBF	; 191
+ 1ec:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 1ee:	85 b1       	in	r24, 0x05	; 5
+ 1f0:	8f 7d       	andi	r24, 0xDF	; 223
+ 1f2:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 1f4:	85 b1       	in	r24, 0x05	; 5
+ 1f6:	8f 7e       	andi	r24, 0xEF	; 239
+ 1f8:	85 b9       	out	0x05, r24	; 5
+			SEGD_OFF;
+ 1fa:	85 b1       	in	r24, 0x05	; 5
+ 1fc:	88 60       	ori	r24, 0x08	; 8
+ 1fe:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+ 200:	85 b1       	in	r24, 0x05	; 5
+ 202:	84 60       	ori	r24, 0x04	; 4
+ 204:	85 b9       	out	0x05, r24	; 5
+			SEGF_OFF;
+ 206:	85 b1       	in	r24, 0x05	; 5
+ 208:	82 60       	ori	r24, 0x02	; 2
+ 20a:	85 b9       	out	0x05, r24	; 5
+			SEGG_OFF;
+ 20c:	85 b1       	in	r24, 0x05	; 5
+ 20e:	81 60       	ori	r24, 0x01	; 1
+ 210:	85 b9       	out	0x05, r24	; 5
+		break;
+ 212:	08 95       	ret
+		//Muestra numero 8
+		case 8:
+			SEGA_ON;
+ 214:	85 b1       	in	r24, 0x05	; 5
+ 216:	8f 7b       	andi	r24, 0xBF	; 191
+ 218:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 21a:	85 b1       	in	r24, 0x05	; 5
+ 21c:	8f 7d       	andi	r24, 0xDF	; 223
+ 21e:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 220:	85 b1       	in	r24, 0x05	; 5
+ 222:	8f 7e       	andi	r24, 0xEF	; 239
+ 224:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 226:	85 b1       	in	r24, 0x05	; 5
+ 228:	87 7f       	andi	r24, 0xF7	; 247
+ 22a:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 22c:	85 b1       	in	r24, 0x05	; 5
+ 22e:	8b 7f       	andi	r24, 0xFB	; 251
+ 230:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 232:	85 b1       	in	r24, 0x05	; 5
+ 234:	8d 7f       	andi	r24, 0xFD	; 253
+ 236:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 238:	85 b1       	in	r24, 0x05	; 5
+ 23a:	8e 7f       	andi	r24, 0xFE	; 254
+ 23c:	85 b9       	out	0x05, r24	; 5
+		break;
+ 23e:	08 95       	ret
+		//Muestra numero 9
+		case 9:
+			SEGA_ON;
+ 240:	85 b1       	in	r24, 0x05	; 5
+ 242:	8f 7b       	andi	r24, 0xBF	; 191
+ 244:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 246:	85 b1       	in	r24, 0x05	; 5
+ 248:	8f 7d       	andi	r24, 0xDF	; 223
+ 24a:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 24c:	85 b1       	in	r24, 0x05	; 5
+ 24e:	8f 7e       	andi	r24, 0xEF	; 239
+ 250:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 252:	85 b1       	in	r24, 0x05	; 5
+ 254:	87 7f       	andi	r24, 0xF7	; 247
+ 256:	85 b9       	out	0x05, r24	; 5
+			SEGE_OFF;
+ 258:	85 b1       	in	r24, 0x05	; 5
+ 25a:	84 60       	ori	r24, 0x04	; 4
+ 25c:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 25e:	85 b1       	in	r24, 0x05	; 5
+ 260:	8d 7f       	andi	r24, 0xFD	; 253
+ 262:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 264:	85 b1       	in	r24, 0x05	; 5
+ 266:	8e 7f       	andi	r24, 0xFE	; 254
+ 268:	85 b9       	out	0x05, r24	; 5
+		break;
+ 26a:	08 95       	ret
+		//Muestra numero A
+		case 10://A
+			SEGA_ON;
+ 26c:	85 b1       	in	r24, 0x05	; 5
+ 26e:	8f 7b       	andi	r24, 0xBF	; 191
+ 270:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 272:	85 b1       	in	r24, 0x05	; 5
+ 274:	8f 7d       	andi	r24, 0xDF	; 223
+ 276:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 278:	85 b1       	in	r24, 0x05	; 5
+ 27a:	8f 7e       	andi	r24, 0xEF	; 239
+ 27c:	85 b9       	out	0x05, r24	; 5
+			SEGD_OFF;
+ 27e:	85 b1       	in	r24, 0x05	; 5
+ 280:	88 60       	ori	r24, 0x08	; 8
+ 282:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 284:	85 b1       	in	r24, 0x05	; 5
+ 286:	8b 7f       	andi	r24, 0xFB	; 251
+ 288:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 28a:	85 b1       	in	r24, 0x05	; 5
+ 28c:	8d 7f       	andi	r24, 0xFD	; 253
+ 28e:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 290:	85 b1       	in	r24, 0x05	; 5
+ 292:	8e 7f       	andi	r24, 0xFE	; 254
+ 294:	85 b9       	out	0x05, r24	; 5
+		break;
+ 296:	08 95       	ret
+		//Muestra numero B
+		case 11:
+			SEGA_OFF;
+ 298:	85 b1       	in	r24, 0x05	; 5
+ 29a:	80 64       	ori	r24, 0x40	; 64
+ 29c:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 29e:	85 b1       	in	r24, 0x05	; 5
+ 2a0:	80 62       	ori	r24, 0x20	; 32
+ 2a2:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 2a4:	85 b1       	in	r24, 0x05	; 5
+ 2a6:	8f 7e       	andi	r24, 0xEF	; 239
+ 2a8:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 2aa:	85 b1       	in	r24, 0x05	; 5
+ 2ac:	87 7f       	andi	r24, 0xF7	; 247
+ 2ae:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 2b0:	85 b1       	in	r24, 0x05	; 5
+ 2b2:	8b 7f       	andi	r24, 0xFB	; 251
+ 2b4:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 2b6:	85 b1       	in	r24, 0x05	; 5
+ 2b8:	8d 7f       	andi	r24, 0xFD	; 253
+ 2ba:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 2bc:	85 b1       	in	r24, 0x05	; 5
+ 2be:	8e 7f       	andi	r24, 0xFE	; 254
+ 2c0:	85 b9       	out	0x05, r24	; 5
+		break;
+ 2c2:	08 95       	ret
+		//Muestra numero C
+		case 12:
+			SEGA_ON;
+ 2c4:	85 b1       	in	r24, 0x05	; 5
+ 2c6:	8f 7b       	andi	r24, 0xBF	; 191
+ 2c8:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 2ca:	85 b1       	in	r24, 0x05	; 5
+ 2cc:	80 62       	ori	r24, 0x20	; 32
+ 2ce:	85 b9       	out	0x05, r24	; 5
+			SEGC_OFF;
+ 2d0:	85 b1       	in	r24, 0x05	; 5
+ 2d2:	80 61       	ori	r24, 0x10	; 16
+ 2d4:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 2d6:	85 b1       	in	r24, 0x05	; 5
+ 2d8:	87 7f       	andi	r24, 0xF7	; 247
+ 2da:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 2dc:	85 b1       	in	r24, 0x05	; 5
+ 2de:	8b 7f       	andi	r24, 0xFB	; 251
+ 2e0:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 2e2:	85 b1       	in	r24, 0x05	; 5
+ 2e4:	8d 7f       	andi	r24, 0xFD	; 253
+ 2e6:	85 b9       	out	0x05, r24	; 5
+			SEGG_OFF;
+ 2e8:	85 b1       	in	r24, 0x05	; 5
+ 2ea:	81 60       	ori	r24, 0x01	; 1
+ 2ec:	85 b9       	out	0x05, r24	; 5
+		break;
+ 2ee:	08 95       	ret
+		//Muestra numero D
+		case 13:
+			SEGA_OFF;
+ 2f0:	85 b1       	in	r24, 0x05	; 5
+ 2f2:	80 64       	ori	r24, 0x40	; 64
+ 2f4:	85 b9       	out	0x05, r24	; 5
+			SEGB_ON;
+ 2f6:	85 b1       	in	r24, 0x05	; 5
+ 2f8:	8f 7d       	andi	r24, 0xDF	; 223
+ 2fa:	85 b9       	out	0x05, r24	; 5
+			SEGC_ON;
+ 2fc:	85 b1       	in	r24, 0x05	; 5
+ 2fe:	8f 7e       	andi	r24, 0xEF	; 239
+ 300:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 302:	85 b1       	in	r24, 0x05	; 5
+ 304:	87 7f       	andi	r24, 0xF7	; 247
+ 306:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 308:	85 b1       	in	r24, 0x05	; 5
+ 30a:	8b 7f       	andi	r24, 0xFB	; 251
+ 30c:	85 b9       	out	0x05, r24	; 5
+			SEGF_OFF;
+ 30e:	85 b1       	in	r24, 0x05	; 5
+ 310:	82 60       	ori	r24, 0x02	; 2
+ 312:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 314:	85 b1       	in	r24, 0x05	; 5
+ 316:	8e 7f       	andi	r24, 0xFE	; 254
+ 318:	85 b9       	out	0x05, r24	; 5
+		break;
+ 31a:	08 95       	ret
+		//Muestra numero E
+		case 14:
+			SEGA_ON;
+ 31c:	85 b1       	in	r24, 0x05	; 5
+ 31e:	8f 7b       	andi	r24, 0xBF	; 191
+ 320:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 322:	85 b1       	in	r24, 0x05	; 5
+ 324:	80 62       	ori	r24, 0x20	; 32
+ 326:	85 b9       	out	0x05, r24	; 5
+			SEGC_OFF;
+ 328:	85 b1       	in	r24, 0x05	; 5
+ 32a:	80 61       	ori	r24, 0x10	; 16
+ 32c:	85 b9       	out	0x05, r24	; 5
+			SEGD_ON;
+ 32e:	85 b1       	in	r24, 0x05	; 5
+ 330:	87 7f       	andi	r24, 0xF7	; 247
+ 332:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 334:	85 b1       	in	r24, 0x05	; 5
+ 336:	8b 7f       	andi	r24, 0xFB	; 251
+ 338:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 33a:	85 b1       	in	r24, 0x05	; 5
+ 33c:	8d 7f       	andi	r24, 0xFD	; 253
+ 33e:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 340:	85 b1       	in	r24, 0x05	; 5
+ 342:	8e 7f       	andi	r24, 0xFE	; 254
+ 344:	85 b9       	out	0x05, r24	; 5
+		break;
+ 346:	08 95       	ret
+		//Muestra numero F
+		case 15:
+			SEGA_ON;
+ 348:	85 b1       	in	r24, 0x05	; 5
+ 34a:	8f 7b       	andi	r24, 0xBF	; 191
+ 34c:	85 b9       	out	0x05, r24	; 5
+			SEGB_OFF;
+ 34e:	85 b1       	in	r24, 0x05	; 5
+ 350:	80 62       	ori	r24, 0x20	; 32
+ 352:	85 b9       	out	0x05, r24	; 5
+			SEGC_OFF;
+ 354:	85 b1       	in	r24, 0x05	; 5
+ 356:	80 61       	ori	r24, 0x10	; 16
+ 358:	85 b9       	out	0x05, r24	; 5
+			SEGD_OFF;
+ 35a:	85 b1       	in	r24, 0x05	; 5
+ 35c:	88 60       	ori	r24, 0x08	; 8
+ 35e:	85 b9       	out	0x05, r24	; 5
+			SEGE_ON;
+ 360:	85 b1       	in	r24, 0x05	; 5
+ 362:	8b 7f       	andi	r24, 0xFB	; 251
+ 364:	85 b9       	out	0x05, r24	; 5
+			SEGF_ON;
+ 366:	85 b1       	in	r24, 0x05	; 5
+ 368:	8d 7f       	andi	r24, 0xFD	; 253
+ 36a:	85 b9       	out	0x05, r24	; 5
+			SEGG_ON;
+ 36c:	85 b1       	in	r24, 0x05	; 5
+ 36e:	8e 7f       	andi	r24, 0xFE	; 254
+ 370:	85 b9       	out	0x05, r24	; 5
+ 372:	08 95       	ret
+
+00000374 <init_ports>:
+void init_ports(void)
+{
+	
+	
+	// Entradas
+	DDRD  &= ~( (1 << BTN_COL1) | (1 << BTN_COL2) | (1 << BTN_COL3) | (1 << BTN_COL4) ); // Declarar entradas
+ 374:	8a b1       	in	r24, 0x0a	; 10
+ 376:	8f 70       	andi	r24, 0x0F	; 15
+ 378:	8a b9       	out	0x0a, r24	; 10
+	PORTD |= ( (1 << BTN_COL1) | (1 << BTN_COL2) | (1 << BTN_COL3) | (1 << BTN_COL4) ); // Pull up
+ 37a:	8b b1       	in	r24, 0x0b	; 11
+ 37c:	80 6f       	ori	r24, 0xF0	; 240
+ 37e:	8b b9       	out	0x0b, r24	; 11
+
+
+	// Salidas
+	DDRD  |=  ( (1 << BTN_ROW1) | (1 << BTN_ROW2) | (1 << BTN_ROW3) | (1 << BTN_ROW4) ); // Declarar Salidas
+ 380:	8a b1       	in	r24, 0x0a	; 10
+ 382:	8f 60       	ori	r24, 0x0F	; 15
+ 384:	8a b9       	out	0x0a, r24	; 10
+	PORTD |=  ( (1 << BTN_ROW1) | (1 << BTN_ROW2) | (1 << BTN_ROW3) | (1 << BTN_ROW4) );
+ 386:	8b b1       	in	r24, 0x0b	; 11
+ 388:	8f 60       	ori	r24, 0x0F	; 15
+ 38a:	8b b9       	out	0x0b, r24	; 11
+	
+	DDRB    = 0xFF; // Declarar salidas
+ 38c:	8f ef       	ldi	r24, 0xFF	; 255
+ 38e:	84 b9       	out	0x04, r24	; 4
+	DISPLAY = 0xFF; // Colocar en LOW las salidas
+ 390:	85 b9       	out	0x05, r24	; 5
+ 392:	08 95       	ret
+
+00000394 <main>:
+void init_ports(void);
+
+/*******************Programa principal*********************/
+int main(void)
+{
+	init_ports();
+ 394:	0e 94 ba 01 	call	0x374	; 0x374 <init_ports>
+	
+    while (1) 
+    {
+		COL_ROWS &= ~(1 << BTN_ROW1);
+ 398:	8b b1       	in	r24, 0x0b	; 11
+ 39a:	8e 7f       	andi	r24, 0xFE	; 254
+ 39c:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW2);
+ 39e:	8b b1       	in	r24, 0x0b	; 11
+ 3a0:	82 60       	ori	r24, 0x02	; 2
+ 3a2:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW3);
+ 3a4:	8b b1       	in	r24, 0x0b	; 11
+ 3a6:	84 60       	ori	r24, 0x04	; 4
+ 3a8:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW4);
+ 3aa:	8b b1       	in	r24, 0x0b	; 11
+ 3ac:	88 60       	ori	r24, 0x08	; 8
+ 3ae:	8b b9       	out	0x0b, r24	; 11
+		if (A1) show_number(7);
+ 3b0:	48 99       	sbic	0x09, 0	; 9
+ 3b2:	05 c0       	rjmp	.+10     	; 0x3be <main+0x2a>
+ 3b4:	4c 99       	sbic	0x09, 4	; 9
+ 3b6:	03 c0       	rjmp	.+6      	; 0x3be <main+0x2a>
+ 3b8:	87 e0       	ldi	r24, 0x07	; 7
+ 3ba:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (A2) show_number(8);
+ 3be:	48 99       	sbic	0x09, 0	; 9
+ 3c0:	05 c0       	rjmp	.+10     	; 0x3cc <main+0x38>
+ 3c2:	4d 99       	sbic	0x09, 5	; 9
+ 3c4:	03 c0       	rjmp	.+6      	; 0x3cc <main+0x38>
+ 3c6:	88 e0       	ldi	r24, 0x08	; 8
+ 3c8:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (A3) show_number(9);
+ 3cc:	48 99       	sbic	0x09, 0	; 9
+ 3ce:	05 c0       	rjmp	.+10     	; 0x3da <main+0x46>
+ 3d0:	4e 99       	sbic	0x09, 6	; 9
+ 3d2:	03 c0       	rjmp	.+6      	; 0x3da <main+0x46>
+ 3d4:	89 e0       	ldi	r24, 0x09	; 9
+ 3d6:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (A4) show_number(10);
+ 3da:	48 99       	sbic	0x09, 0	; 9
+ 3dc:	05 c0       	rjmp	.+10     	; 0x3e8 <main+0x54>
+ 3de:	4f 99       	sbic	0x09, 7	; 9
+ 3e0:	03 c0       	rjmp	.+6      	; 0x3e8 <main+0x54>
+ 3e2:	8a e0       	ldi	r24, 0x0A	; 10
+ 3e4:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		
+			 
+		COL_ROWS |= (1 << BTN_ROW1);
+ 3e8:	8b b1       	in	r24, 0x0b	; 11
+ 3ea:	81 60       	ori	r24, 0x01	; 1
+ 3ec:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS &= ~(1 << BTN_ROW2);
+ 3ee:	8b b1       	in	r24, 0x0b	; 11
+ 3f0:	8d 7f       	andi	r24, 0xFD	; 253
+ 3f2:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW3);
+ 3f4:	8b b1       	in	r24, 0x0b	; 11
+ 3f6:	84 60       	ori	r24, 0x04	; 4
+ 3f8:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW4);			
+ 3fa:	8b b1       	in	r24, 0x0b	; 11
+ 3fc:	88 60       	ori	r24, 0x08	; 8
+ 3fe:	8b b9       	out	0x0b, r24	; 11
+		if (B1) show_number(4);
+ 400:	49 99       	sbic	0x09, 1	; 9
+ 402:	05 c0       	rjmp	.+10     	; 0x40e <__EEPROM_REGION_LENGTH__+0xe>
+ 404:	4c 99       	sbic	0x09, 4	; 9
+ 406:	03 c0       	rjmp	.+6      	; 0x40e <__EEPROM_REGION_LENGTH__+0xe>
+ 408:	84 e0       	ldi	r24, 0x04	; 4
+ 40a:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (B2) show_number(5);
+ 40e:	49 99       	sbic	0x09, 1	; 9
+ 410:	05 c0       	rjmp	.+10     	; 0x41c <__EEPROM_REGION_LENGTH__+0x1c>
+ 412:	4d 99       	sbic	0x09, 5	; 9
+ 414:	03 c0       	rjmp	.+6      	; 0x41c <__EEPROM_REGION_LENGTH__+0x1c>
+ 416:	85 e0       	ldi	r24, 0x05	; 5
+ 418:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (B3) show_number(6);
+ 41c:	49 99       	sbic	0x09, 1	; 9
+ 41e:	05 c0       	rjmp	.+10     	; 0x42a <__EEPROM_REGION_LENGTH__+0x2a>
+ 420:	4e 99       	sbic	0x09, 6	; 9
+ 422:	03 c0       	rjmp	.+6      	; 0x42a <__EEPROM_REGION_LENGTH__+0x2a>
+ 424:	86 e0       	ldi	r24, 0x06	; 6
+ 426:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (B4) show_number(11);	
+ 42a:	49 99       	sbic	0x09, 1	; 9
+ 42c:	05 c0       	rjmp	.+10     	; 0x438 <__EEPROM_REGION_LENGTH__+0x38>
+ 42e:	4f 99       	sbic	0x09, 7	; 9
+ 430:	03 c0       	rjmp	.+6      	; 0x438 <__EEPROM_REGION_LENGTH__+0x38>
+ 432:	8b e0       	ldi	r24, 0x0B	; 11
+ 434:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		
+		
+		
+		COL_ROWS |= (1 << BTN_ROW1);
+ 438:	8b b1       	in	r24, 0x0b	; 11
+ 43a:	81 60       	ori	r24, 0x01	; 1
+ 43c:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW2);
+ 43e:	8b b1       	in	r24, 0x0b	; 11
+ 440:	82 60       	ori	r24, 0x02	; 2
+ 442:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS &= ~(1 << BTN_ROW3);
+ 444:	8b b1       	in	r24, 0x0b	; 11
+ 446:	8b 7f       	andi	r24, 0xFB	; 251
+ 448:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW4);			
+ 44a:	8b b1       	in	r24, 0x0b	; 11
+ 44c:	88 60       	ori	r24, 0x08	; 8
+ 44e:	8b b9       	out	0x0b, r24	; 11
+		if (C1) show_number(1);
+ 450:	4a 99       	sbic	0x09, 2	; 9
+ 452:	05 c0       	rjmp	.+10     	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
+ 454:	4c 99       	sbic	0x09, 4	; 9
+ 456:	03 c0       	rjmp	.+6      	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
+ 458:	81 e0       	ldi	r24, 0x01	; 1
+ 45a:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (C2) show_number(2);
+ 45e:	4a 99       	sbic	0x09, 2	; 9
+ 460:	05 c0       	rjmp	.+10     	; 0x46c <__EEPROM_REGION_LENGTH__+0x6c>
+ 462:	4d 99       	sbic	0x09, 5	; 9
+ 464:	03 c0       	rjmp	.+6      	; 0x46c <__EEPROM_REGION_LENGTH__+0x6c>
+ 466:	82 e0       	ldi	r24, 0x02	; 2
+ 468:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (C3) show_number(3);
+ 46c:	4a 99       	sbic	0x09, 2	; 9
+ 46e:	05 c0       	rjmp	.+10     	; 0x47a <__EEPROM_REGION_LENGTH__+0x7a>
+ 470:	4e 99       	sbic	0x09, 6	; 9
+ 472:	03 c0       	rjmp	.+6      	; 0x47a <__EEPROM_REGION_LENGTH__+0x7a>
+ 474:	83 e0       	ldi	r24, 0x03	; 3
+ 476:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (C4) show_number(12);
+ 47a:	4a 99       	sbic	0x09, 2	; 9
+ 47c:	05 c0       	rjmp	.+10     	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
+ 47e:	4f 99       	sbic	0x09, 7	; 9
+ 480:	03 c0       	rjmp	.+6      	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
+ 482:	8c e0       	ldi	r24, 0x0C	; 12
+ 484:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		
+		
+		
+		COL_ROWS |= (1 << BTN_ROW1);
+ 488:	8b b1       	in	r24, 0x0b	; 11
+ 48a:	81 60       	ori	r24, 0x01	; 1
+ 48c:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW2);
+ 48e:	8b b1       	in	r24, 0x0b	; 11
+ 490:	82 60       	ori	r24, 0x02	; 2
+ 492:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS |= (1 << BTN_ROW3);
+ 494:	8b b1       	in	r24, 0x0b	; 11
+ 496:	84 60       	ori	r24, 0x04	; 4
+ 498:	8b b9       	out	0x0b, r24	; 11
+		COL_ROWS &= ~(1 << BTN_ROW4);			
+ 49a:	8b b1       	in	r24, 0x0b	; 11
+ 49c:	87 7f       	andi	r24, 0xF7	; 247
+ 49e:	8b b9       	out	0x0b, r24	; 11
+		if (D1) show_number(13);
+ 4a0:	4b 99       	sbic	0x09, 3	; 9
+ 4a2:	05 c0       	rjmp	.+10     	; 0x4ae <__EEPROM_REGION_LENGTH__+0xae>
+ 4a4:	4c 99       	sbic	0x09, 4	; 9
+ 4a6:	03 c0       	rjmp	.+6      	; 0x4ae <__EEPROM_REGION_LENGTH__+0xae>
+ 4a8:	8d e0       	ldi	r24, 0x0D	; 13
+ 4aa:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (D2) show_number(0);
+ 4ae:	4b 99       	sbic	0x09, 3	; 9
+ 4b0:	05 c0       	rjmp	.+10     	; 0x4bc <__EEPROM_REGION_LENGTH__+0xbc>
+ 4b2:	4d 99       	sbic	0x09, 5	; 9
+ 4b4:	03 c0       	rjmp	.+6      	; 0x4bc <__EEPROM_REGION_LENGTH__+0xbc>
+ 4b6:	80 e0       	ldi	r24, 0x00	; 0
+ 4b8:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (D3) show_number(14);
+ 4bc:	4b 99       	sbic	0x09, 3	; 9
+ 4be:	05 c0       	rjmp	.+10     	; 0x4ca <__EEPROM_REGION_LENGTH__+0xca>
+ 4c0:	4e 99       	sbic	0x09, 6	; 9
+ 4c2:	03 c0       	rjmp	.+6      	; 0x4ca <__EEPROM_REGION_LENGTH__+0xca>
+ 4c4:	8e e0       	ldi	r24, 0x0E	; 14
+ 4c6:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+		if (D4) show_number(15);
+ 4ca:	4b 99       	sbic	0x09, 3	; 9
+ 4cc:	65 cf       	rjmp	.-310    	; 0x398 <main+0x4>
+ 4ce:	4f 99       	sbic	0x09, 7	; 9
+ 4d0:	63 cf       	rjmp	.-314    	; 0x398 <main+0x4>
+ 4d2:	8f e0       	ldi	r24, 0x0F	; 15
+ 4d4:	0e 94 50 00 	call	0xa0	; 0xa0 <show_number>
+ 4d8:	5f cf       	rjmp	.-322    	; 0x398 <main+0x4>
+
+000004da <__tablejump2__>:
+ 4da:	ee 0f       	add	r30, r30
+ 4dc:	ff 1f       	adc	r31, r31
+ 4de:	05 90       	lpm	r0, Z+
+ 4e0:	f4 91       	lpm	r31, Z
+ 4e2:	e0 2d       	mov	r30, r0
+ 4e4:	09 94       	ijmp
+
+000004e6 <_exit>:
+ 4e6:	f8 94       	cli
+
+000004e8 <__stop_program>:
+ 4e8:	ff cf       	rjmp	.-2      	; 0x4e8 <__stop_program>
